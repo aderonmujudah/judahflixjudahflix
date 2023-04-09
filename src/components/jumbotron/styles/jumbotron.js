@@ -1,5 +1,13 @@
 import styled from "styled-components/macro";
 
+export const Item = styled.div`
+  display: flex;
+  border-bottom: 8px solid #222;
+  padding: 50px 5%;
+  color: white;
+  overflow: hidden;
+`;
+
 export const Inner = styled.div`
   display: flex;
   align-items: center;
@@ -15,7 +23,14 @@ export const Inner = styled.div`
 `;
 export const Pane = styled.div`
   width: 50%;
+
+  @media (max-width: 1000px) {
+    width: 100%;
+    padding: 0 45px;
+    text-align: center;
+  }
 `;
+
 export const Title = styled.h1`
   font-size: 50px;
   line-height: 1.1;
@@ -41,4 +56,10 @@ export const Image = styled.img`
   height: auto;
 `;
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  @media (max-width: 1000px) {
+    ${Item}: last-of-type h2 {
+      margin-bottom: 50px;
+    }
+  }
+`;
