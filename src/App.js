@@ -5,8 +5,13 @@ import * as ROUTES from "./constants/routes";
 
 export default function App() {
   return (
-    <Router exact path={ROUTES.HOME}>
-      <Home />
+    <Router>
+      <Routes>
+        <Route exact path="/browse" element={<Browse />} />
+        <Route exact path="/signin" element={<Signin />} />
+        <Route exact path="/signup" element={<Signup />} />
+        <Route exact path={ROUTES.HOME} element={<Home />} />
+      </Routes>
     </Router>
   );
 }
